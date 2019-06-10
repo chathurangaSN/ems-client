@@ -1,0 +1,15 @@
+<p>
+  employee works!
+</p>
+<table style="border-style: dashed"  >
+  <tr >
+    <th>ID</th>
+    <th>Name</th> 
+    <th>Address</th>
+  </tr>
+  <tr *ngFor="let employee of employees">
+    <td>{{employee.id}}</td>
+    <td>{{employee.name}}</td> 
+    <td>{{employee.age}}</td>
+  </tr>
+</table>
