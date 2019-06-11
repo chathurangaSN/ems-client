@@ -6,16 +6,33 @@ import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpclientService } from './service/httpclient.service';
+import { NewComponent } from './employee/new/new.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { MoreComponent } from './employee/more/more.component';
+import { UpdateComponent } from './employee/update/update.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    NewComponent,
+    PageNotFoundComponent,
+    ReversePipe,
+    MoreComponent,
+    UpdateComponent,
+    NavbarComponent
+   
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     HttpclientService
