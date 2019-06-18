@@ -11,6 +11,7 @@ import { from } from 'rxjs';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
+  dateMessage:string; 
   employees: string[];
   constructor(
     private httpclientService: HttpclientService,
@@ -18,6 +19,7 @@ export class EmployeeComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    
     this.httpclientService.getEmployees().subscribe(
       responce => this.handleSuccessfulResponce(responce)
     );
