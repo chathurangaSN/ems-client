@@ -8,17 +8,16 @@ import { Observable } from 'rxjs';
 })
 export class HttpclientService {
   employee = new Employee();
-  baseUrl='http://localhost:8080/api/employee';
+  baseUrl='http://localhost:8081/api/employee';
 
   constructor(private httpClient:HttpClient) { }
 
   getEmployees(){
     return this.httpClient.get<Employee>(this.baseUrl);
   }
-  // getEmployeesById(eid:id){
-  //   return this.httpClient.get<Employee>(this.baseUrl,eid);
-  // }
-  
+  getEmployeesById(id){
+    return this.httpClient.get<Employee>(this.baseUrl,id);
+  }  
   createEmployee(employee1:Employee):Observable<Employee>{
     console.log("hello from service post employee : "+JSON.stringify(employee1));
     return this.httpClient.post<Employee>(this.baseUrl, employee1);
