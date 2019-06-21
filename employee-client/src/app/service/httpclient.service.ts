@@ -15,7 +15,7 @@ export class HttpclientService {
   getEmployees(){
     return this.httpClient.get<Employee>(this.baseUrl);
   }
-  getEmployeesById(id){
+  getEmployeeById(id){
     return this.httpClient.get<Employee>(this.baseUrl,id);
   }  
   createEmployee(employee1:Employee):Observable<Employee>{

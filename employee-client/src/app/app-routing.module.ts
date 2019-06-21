@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'employees', component: EmployeeComponent },
   { path: 'new', component: NewComponent },
   { path: 'update', component: UpdateComponent },
-  { path: 'more', component: MoreComponent },
+  { path: 'more/:id', component: MoreComponent },
   {path: '**', component:PageNotFoundComponent}
 ];
 

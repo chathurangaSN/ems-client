@@ -11,6 +11,7 @@ import { from } from 'rxjs';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
+  id:any;
   dateMessage:string; 
   employees: string[];
   constructor(
@@ -35,7 +36,8 @@ export class EmployeeComponent implements OnInit {
     this.router.navigate(['/new']);
   }
   moreDetail(){
-    this.router.navigate(['/more']);
+    // this.id=Employee.id
+    //this.router.navigate(['/more']);
   }
   updateDetail(){
     this.router.navigate(['/update']);
