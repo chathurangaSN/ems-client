@@ -14,6 +14,7 @@ import { MoreComponent } from './employee/more/more.component';
 import { UpdateComponent } from './employee/update/update.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DeleteComponent } from './employee/delete/delete.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { DeleteComponent } from './employee/delete/delete.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     HttpclientService
