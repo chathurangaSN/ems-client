@@ -4,7 +4,7 @@
   <p class="lead">{{dateMessage}}</p>
 </div>
 <div>
-  <button class="btn btn-primary btn-lg" (click)="addNew()">New Employee</button>
+  <button class="btn btn-primary btn-lg" (click)="create()">New Employee</button>
   <hr>
 </div>
 <div>
@@ -23,9 +23,9 @@
     <td>{{employee.id}}</td>
     <td>{{employee.name| titlecase }}</td>
     <td>{{employee.age|number:'1.2-2'}}</td>
-    <td><button class="btn btn-info" (click)="moreDetail()"  [routerLink]="['/more',employee.id]">More</button></td>
-    <td><button class="btn btn-warning" (click)="updateDetail()">Edit</button></td>
-    <td><button class="btn btn-danger">Delete</button></td>
+    <td><button class="btn btn-info" [routerLink]="['/more',employee.id]">More</button></td>
+    <td><button class="btn btn-warning" [routerLink]="['/update',employee.id]">Edit</button></td>
+    <td><button class="btn btn-danger" [routerLink]="['/delete',employee.id]">Delete</button></td>
   </tr>
 </table>
 </div>

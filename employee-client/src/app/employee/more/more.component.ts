@@ -19,15 +19,9 @@ export class MoreComponent implements OnInit {
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
     console.log(id);
-    this.httpclientService.getEmployeeById(id).subscribe(
-      responce => this.handleSuccessfulResponce(responce)
-    );
-    
-  }
-  handleSuccessfulResponce(responce) {
-    this.employee = responce
-    console.log(responce);
-    console.log("hi from MoreComponent handleSuccessfulResponce ");
+    this.httpclientService.getEmployeeById(id)
+    .subscribe(data => this.employee = data);
+    console.log(this.employee);
   }
 
 }

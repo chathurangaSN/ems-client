@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Employee } from '../model/employee.model';
 import { Observable } from 'rxjs';
 
@@ -8,18 +8,27 @@ import { Observable } from 'rxjs';
 })
 export class HttpclientService {
   employee = new Employee();
-  baseUrl='http://localhost:8081/api/employee';
+  baseUrl='http://localhost:8081/api/employee/';
 
   constructor(private httpClient:HttpClient) { }
 
   getEmployees(){
-    return this.httpClient.get<Employee>(this.baseUrl);
+    return this.httpClient.get<Employee[]>(this.baseUrl);
   }
   getEmployeeById(id){
-    return this.httpClient.get<Employee>(this.baseUrl,id);
+    console.log("getEmployeeById is called: "+id);
+    return this.httpClient.get<Employee>(this.baseUrl+id);
+    // return this.httpClient.get(this.baseUrl,id);
   }  
   createEmployee(employee1:Employee):Observable<Employee>{
     console.log("hello from service post employee : "+JSON.stringify(employee1));
     return this.httpClient.post<Employee>(this.baseUrl, employee1);
+  }
+  updateEmployee(employee1:Employee):Observable<Employee>{
+    console.log("hello from service post employee : "+JSON.stringify(employee1));
+    return this.httpClient.put<Employee>(this.baseUrl, employee1);
+  }
+  deleteEmpById(id){
+    return this.httpClient.delete(this.baseUrl+id);
   }
 }

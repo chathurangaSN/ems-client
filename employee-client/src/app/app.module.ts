@@ -13,6 +13,7 @@ import { ReversePipe } from './pipes/reverse.pipe';
 import { MoreComponent } from './employee/more/more.component';
 import { UpdateComponent } from './employee/update/update.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DeleteComponent } from './employee/delete/delete.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ReversePipe,
     MoreComponent,
     UpdateComponent,
-    NavbarComponent
+    NavbarComponent,
+    DeleteComponent
    
 
   ],

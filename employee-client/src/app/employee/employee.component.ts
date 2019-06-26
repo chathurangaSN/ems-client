@@ -13,7 +13,7 @@ import { from } from 'rxjs';
 export class EmployeeComponent implements OnInit {
   id:any;
   dateMessage:string; 
-  employees: string[];
+  employees:Employee[];
   constructor(
     private httpclientService: HttpclientService,
     private router: Router
@@ -22,24 +22,23 @@ export class EmployeeComponent implements OnInit {
   ngOnInit() {
     
     this.httpclientService.getEmployees().subscribe(
-      responce => this.handleSuccessfulResponce(responce)
-    );
+      responce => this.employees=responce);
 
     console.log("hi from EmployeeComponent ngOnInit ");
     //console.log(employee);
   }
-  handleSuccessfulResponce(responce) {
-    this.employees = responce
-    console.log("hi from EmployeeComponent handleSuccessfulResponce ");
-  }
-  addNew(){
+  // handleSuccessfulResponce(responce) {
+  //   this.employees = responce
+  //   console.log("hi from EmployeeComponent handleSuccessfulResponce ");
+  // }
+  create(){
     this.router.navigate(['/new']);
   }
-  moreDetail(){
-    // this.id=Employee.id
-    //this.router.navigate(['/more']);
+  readById(id){
+    
+    this.router.navigate(['/more',]);
   }
-  updateDetail(){
+  update(id){
     this.router.navigate(['/update']);
   }
   // getMore(eid:id){
@@ -47,4 +46,5 @@ export class EmployeeComponent implements OnInit {
   //     //responce => this.handleSuccessfulResponce(responce)
   //   );
   // }
+
 }

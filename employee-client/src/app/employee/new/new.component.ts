@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class NewComponent implements OnInit {
   employee:Employee;
+  employees:Employee[]
   employeeForm:FormGroup;
   constructor(
     private fb:FormBuilder,
@@ -35,6 +36,8 @@ export class NewComponent implements OnInit {
     console.log("hi from NewComponent onSubmit this.employee : "+this.employee);
 
     this.myHttp.createEmployee(this.employeeForm.value).subscribe();
+    this.myHttp.getEmployees().subscribe(
+      responce => this.employees=responce);
       // responce => this.handleSuccessfulResponce(responce)<---do not undestand yet 11/09/2019
     
     //this.myHttp.createEmployee(this.employee);<----without subscribe it is not work only can pass data
