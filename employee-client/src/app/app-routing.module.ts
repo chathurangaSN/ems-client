@@ -8,7 +8,10 @@ import { MoreComponent } from './employee/more/more.component';
 import { DeleteComponent } from './employee/delete/delete.component';
 
 const routes: Routes = [
-  { path: '', component: EmployeeComponent },
+  { path: '',
+    redirectTo: '/employees',
+    pathMatch: 'full'
+  },
   { path: 'employees', component: EmployeeComponent },
   { path: 'new', component: NewComponent },
   { path: 'update', component: UpdateComponent },

@@ -1,31 +1,39 @@
 <div class="container">
-<div id="header" class="jumbotron jumbotron-fluid text-center">
-  <h1 class="display-4">Employee Details</h1>
-  <p class="lead">{{dateMessage}}</p>
-</div>
-<div>
-  <button class="btn btn-primary btn-lg" (click)="create()">New Employee</button>
-  <hr>
-</div>
-<div>
+  <div id="header" class="jumbotron jumbotron-fluid text-center">
+    <h1 class="display-4">Employee Details</h1>
+    <p class="lead">{{dateMessage}}</p>
+  </div>
+  <div>
+    <button class="btn btn-primary btn-lg" (click)="create()">
+      <img src="../../assets/images/add.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+      New Employee</button>
+    <hr>
+  </div>
+  <div>
 
-</div>
-<table class="table">
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Age</th>
-    <th>More</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </tr>
-  <tr *ngFor="let employee of employees  ">
-    <td>{{employee.id}}</td>
-    <td>{{employee.name| titlecase }}</td>
-    <td>{{employee.age|number:'1.2-2'}}</td>
-    <td><button class="btn btn-info" [routerLink]="['/more',employee.id]">More</button></td>
-    <td><button class="btn btn-warning" [routerLink]="['/update',employee.id]">Edit</button></td>
-    <td><button class="btn btn-danger" [routerLink]="['/delete',employee.id]">Delete</button></td>
-  </tr>
-</table>
+  </div>
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>More</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor="let employee of employees  ">
+      <td>{{employee.id}}</td>
+      <td>{{employee.name| titlecase }}</td>
+      <td>{{employee.age|number:'1.2-2'}}</td>
+      <td><button class="btn btn-info" [routerLink]="['/more',employee.id]">
+          <img src="../../assets/images/detail.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          More</button></td>
+      <td><button class="btn btn-warning" [routerLink]="['/update',employee.id]">
+          <img src="../../assets/images/edit.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          Edit</button></td>
+      <td><button class="btn btn-danger" [routerLink]="['/delete',employee.id]">
+          <img src="../../assets/images/delete.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          Delete</button></td>
+    </tr>
+  </table>
 </div>

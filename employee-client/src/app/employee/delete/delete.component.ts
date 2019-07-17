@@ -16,7 +16,7 @@ id:any;
     private route: ActivatedRoute,
     private router: Router
     ) { }
-
+  ngOnChanges(){}
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
   }

@@ -19,8 +19,9 @@ export class EmployeeComponent implements OnInit {
     private router: Router
     ) { }
 
-  ngOnInit() {
-    
+  ngOnChanges() { }
+  ngOnInit(){
+      
     this.httpclientService.getEmployees().subscribe(
       responce => this.employees=responce);
 
