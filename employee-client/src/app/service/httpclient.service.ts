@@ -24,9 +24,9 @@ export class HttpclientService {
     console.log("hello from service post employee : "+JSON.stringify(employee1));
     return this.httpClient.post<Employee>(this.baseUrl, employee1);
   }
-  updateEmployee(employee1:Employee):Observable<Employee>{
-    console.log("hello from service post employee : "+JSON.stringify(employee1));
-    return this.httpClient.put<Employee>(this.baseUrl, employee1);
+  updateEmployee(employee1:Employee,id):Observable<Employee>{
+    console.log("hello from service post employee : "+JSON.stringify(employee1)+" "+employee1.id);
+    return this.httpClient.put<Employee>(this.baseUrl+id, employee1);
   }
   deleteEmpById(id){
     return this.httpClient.delete(this.baseUrl+id);

@@ -5,7 +5,6 @@ import { NewComponent } from './employee/new/new.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UpdateComponent } from './employee/update/update.component';
 import { MoreComponent } from './employee/more/more.component';
-import { DeleteComponent } from './employee/delete/delete.component';
 
 const routes: Routes = [
   { path: '',
@@ -17,7 +16,6 @@ const routes: Routes = [
   { path: 'update', component: UpdateComponent },
   { path: 'more/:id', component: MoreComponent },
   { path: 'update/:id', component: UpdateComponent},
-  { path: 'delete/:id', component: DeleteComponent},
   {path: '**', component:PageNotFoundComponent}
 ];
 

@@ -13,8 +13,11 @@ import { ReversePipe } from './pipes/reverse.pipe';
 import { MoreComponent } from './employee/more/more.component';
 import { UpdateComponent } from './employee/update/update.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { DeleteComponent } from './employee/delete/delete.component';
 import {FormsModule} from '@angular/forms';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+//import { ConfirmationDialogService } from './confirmation-dialog/confirmation-dialog.service';
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -27,11 +30,14 @@ import {FormsModule} from '@angular/forms';
     MoreComponent,
     UpdateComponent,
     NavbarComponent,
-    DeleteComponent
+    SidebarComponent,
+    //ConfirmationDialogComponent
+
    
 
   ],
   imports: [
+    //NgbModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -39,7 +45,8 @@ import {FormsModule} from '@angular/forms';
     FormsModule
   ],
   providers: [
-    HttpclientService
+    HttpclientService,
+    //ConfirmationDialogService
   ],
   bootstrap: [AppComponent]
 })

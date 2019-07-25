@@ -24,7 +24,10 @@ export class NewComponent implements OnInit {
     this.employeeForm = this.fb.group(
       {
         name: ['',Validators.required],
-        age: ['',Validators.required]
+        age: ['',
+        Validators.required
+        // Validators.pattern('^[0-9]')
+      ]
       }
     );
     console.log("hi from NewComponent ngOnInit  member variable : "+this.employee);

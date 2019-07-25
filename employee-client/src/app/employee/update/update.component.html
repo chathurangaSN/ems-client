@@ -1,3 +1,26 @@
+<div class="container">
 
-{{employee?.id}}
-{{employee?.name}}
+    <div id="header" class="jumbotron jumbotron-fluid text-center">
+      <h1 class="display-4">Edit Employee:{{employee?.name}}</h1>
+    </div>
+  
+    <div class="employeeForm">
+  
+      <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" formControlName="name" [value]="employee?.name" class="form-control" id="name" >
+          <span style="color: red" *ngIf="!employeeForm.get('name').valid"><small>please enter name coreectly</small> </span>
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="text" formControlName="age" class="form-control" id="age" [value]="employee?.age">
+          <span style="color: red" *ngIf="!employeeForm.get('age').valid"><small>please enter Age coreectly</small> </span>
+        </div>
+        <div>
+          <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-primary btn-lg btn-block">Submit</button>
+        </div>
+      </form>
+  
+    </div>
+  </div>

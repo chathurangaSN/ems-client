@@ -1,9 +1,20 @@
-#id{
-    background-color: olive
+.jumbotron{
+    background-color: rgb(160, 160, 110);
+    padding: 0px;
+    margin: 0px;
 }
-.employeeForm{
-    padding: 150px;
+#breadcrumb{
+    margin: 0px;
 }
 .container{
     padding-top: 25px;
+}
+hr{ 
+    height: 1px;
+    color: red;
+    background-color: red;
+    border: none;
+  }
+tfoot{
+    background-color: bisque;
 }
