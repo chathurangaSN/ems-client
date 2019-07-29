@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-//import { Observable } from 'rxjs/Observable';
+import { Observable, Subject } from 'rxjs';
 //import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationDialogComponent } from './confirmation-dialog.component';
 
@@ -7,10 +7,36 @@ import { ConfirmationDialogComponent } from './confirmation-dialog.component';
   providedIn: 'root'
 })
 export class ConfirmationDialogService {
-
+  private subject = new Subject<any>();
   constructor(
     //private modalService: NgbModal
-    ) { }
+  ) { }
+
+  confirmThis(message: string, siFn: () => void, noFn: () => void) {
+    this.setConfirmation(message, siFn, noFn);
+  }
+  setConfirmation(message: string, siFn: () => void, noFn: () => void) {
+    let that = this;
+    this.subject.next({
+      type: "confirm",
+      text: message,
+      siFn:
+        function () {
+          that.subject.next(); //this will close the modal  
+          siFn();
+        },
+      noFn: function () {
+        that.subject.next();
+        noFn();
+      }
+    });
+
+  }
+
+  getMessage(): Observable<any> {
+    return this.subject.asObservable();
+  }
+
 
   // public confirm(
   //   title: string,

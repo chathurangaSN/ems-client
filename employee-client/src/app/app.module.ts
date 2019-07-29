@@ -16,6 +16,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {FormsModule} from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogModule } from './confirmation-dialog/confirmation-dialog.module';
 //import { ConfirmationDialogService } from './confirmation-dialog/confirmation-dialog.service';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -43,6 +44,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule
+    //ConfirmationDialogModule
   ],
   providers: [
     HttpclientService,

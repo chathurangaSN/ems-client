@@ -58,6 +58,16 @@ export class EmployeeComponent implements OnInit {
     this.router.navigate(['']);
     this.getDetails();
   }
+  showDialog() {
+    //confirm("dfd");  
+    this.confirmationDialogService
+    .confirmThis("Are you sure to delete?"
+    , function () {  
+      alert("Yes clicked");  
+    }, function () {  
+      alert("No clicked");  
+    })  
+  } 
   // getMore(eid:id){
   //   this.httpclientService.getEmployeesById(eid).subscribe(
   //     //responce => this.handleSuccessfulResponce(responce)

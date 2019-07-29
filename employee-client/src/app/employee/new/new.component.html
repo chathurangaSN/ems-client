@@ -10,13 +10,13 @@
     <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" formControlName="name" class="form-control" id="name" placeholder="name">
-        <span style="color: red" *ngIf="!employeeForm.get('name').valid"><small>please enter name coreectly</small> </span>
+        <input type="text" formControlName="name" class="form-control" id="name" placeholder="name" autocomplete="off">
+        <span style="color: red" *ngIf="!employeeForm.get('name').valid && employeeForm.get('name').touched"><small>please enter name coreectly</small> </span>
       </div>
       <div class="form-group">
         <label for="age">Age</label>
-        <input type="text" formControlName="age" class="form-control" id="age" placeholder="age">
-        <span style="color: red" *ngIf="!employeeForm.get('age').valid"><small>please enter age coreectly</small> </span>
+        <input type="text" formControlName="age" class="form-control" id="age" placeholder="age" autocomplete="off">
+        <span style="color: red" *ngIf="!employeeForm.get('age').valid && employeeForm.get('age').touched"><small>please enter age coreectly</small> </span>
       </div>
       <div>
         <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-primary btn-lg btn-block">Submit</button>
