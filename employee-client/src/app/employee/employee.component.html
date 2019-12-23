@@ -28,7 +28,7 @@
       <th>Edit</th>
       <th>Delete</th>
     </tr>
-    <tr *ngFor="let employee of employees;let i =index  ">
+    <tr *ngFor="let employee of employees| paginate: { itemsPerPage: 4, currentPage: p }  ">
       <td>{{i+1}}</td>
       <td>{{employee.name| titlecase }}</td>
       <td>{{employee.age|number:'1.2-2'}}</td>
@@ -45,7 +45,7 @@
     <tfoot>
         <tr>
           <td colspan="6">
-            this is for pagination
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </td>
         </tr>
         </tfoot>

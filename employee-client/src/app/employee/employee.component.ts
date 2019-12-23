@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpclientService } from '../service/httpclient.service';
 import { Employee } from '../model/employee.model';
 import { Router } from '@angular/router';
+import {NgxPaginationModule} from 'ngx-pagination';
 import{ReversePipe} from '../pipes/reverse.pipe'
 import { from } from 'rxjs';
 import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog.service';
@@ -12,6 +13,8 @@ import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-d
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
+
+  p: number = 1; 
   index:number=0;
   id:any;
   currentDate:Date=new Date();

@@ -25,8 +25,7 @@ export class NewComponent implements OnInit {
       {
         name: ['',Validators.required],
         age: ['',
-        Validators.required,
-       Validators.pattern('[0-9]*')
+        Validators.required
         // Validators.pattern('^[0-9]')
       ]
       }

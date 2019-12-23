@@ -15,6 +15,7 @@ import { UpdateComponent } from './employee/update/update.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {FormsModule} from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { ConfirmationDialogModule } from './confirmation-dialog/confirmation-dialog.module';
 //import { ConfirmationDialogService } from './confirmation-dialog/confirmation-dialog.service';
@@ -40,6 +41,7 @@ import { ConfirmationDialogModule } from './confirmation-dialog/confirmation-dia
   imports: [
     //NgbModule,
     BrowserModule,
+    NgxPaginationModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
